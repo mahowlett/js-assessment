@@ -22,7 +22,6 @@ define(function() {
                 arr = arr1.concat(arr2);
             }
         }
-        //return arr1.concat(arr2);
         return arr;
     },
     
@@ -31,22 +30,23 @@ define(function() {
     },
 
     append : function(arr, item) {
-        return arr.push(item);
+        arr.push(item);
+        return arr;
     },
 
     truncate : function(arr) {
-        return null;
+        arr.pop();
+        return arr;
     },
 
     concat : function(arr1, arr2) {
-        for (var i=0;i<arr2.length;i++) {
-            arr1 = arr1.push(arr2[i]);
-        }
-        return arr1;
+        var newArray = arr1.concat(arr2);
+        return newArray;
 ;    },
 
     insert : function(arr, item, index) {
-
+        arr.splice(index,0,item);
+        return arr;
     },
 
     count : function(arr, item) {
